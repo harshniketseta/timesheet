@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component name="dataSourceStorage">
+  <data-source source="LOCAL" name="Rails timesheet: development" uuid="fc8bccaf-a6cb-4127-a26f-ad4fb7a58497">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails timesheet: test" uuid="4ca27ef5-21bc-4aaa-941c-3ed9cd75af81">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+  <data-source source="LOCAL" name="Rails timesheet: production" uuid="66d0181d-4664-44c5-94dd-b6f6fcc57203">
+    <database-info product="" version="" jdbc-version="" driver-name="" driver-version=""/>
+  </data-source>
+</component>

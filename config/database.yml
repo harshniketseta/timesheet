@@ -1,0 +1,29 @@
+# Mysql
+#   gem install mysql2
+#
+#   Ensure the mysql gem is defined in your Gemfile
+#   gem 'mysql2'
+#
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  reconnect: true
+  pool: 5
+
+development:
+  <<: *default
+  username: timesheet
+  password: timesheet
+  host: localhost
+  database: timesheet_dev
+
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
+test:
+  <<: *default
+  database: timesheet_test
+
+production:
+  <<: *default
+  database: timesheet_prod
