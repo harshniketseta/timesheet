@@ -2,11 +2,30 @@
 <html>
 <head>
   <title>Timesheet</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <div class="login" style="padding: 5px;">
+    <span class="pull-right">
+      <% if user_signed_in? %>
+        Signed in as <%= current_user.name %>. Not you?
+        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
+      <% else %>
+        <a href="<%= user_omniauth_authorize_path(:google_oauth2) %>">
+          <div id="customBtn" class="customGPlusSignIn">
+            <span class="icon"></span>
+            <span class="buttonText">Sign in with Google</span>
+          </div>
+        </a>
+      <% end %>
+    </span>
+  </div>
+
+  <p class="notice"><%= notice %></p>
+
+  <p class="alert"><%= alert %></p>
 
 <%= yield %>
 

@@ -4,6 +4,8 @@
 # or operating system, you probably want to add a global ignore instead:
 #   git config --global core.excludesfile '~/.gitignore_global'
 
+# Ignore all rubymine idea files.
+.idea/*
 # Ignore bundler config.
 /.bundle
 
@@ -14,3 +16,10 @@
 # Ignore all logfiles and tempfiles.
 /log/*.log
 /tmp
+/test/*
+.rvmrc
+/public/uploads/*
+# Ignore database.yml
+# Copy database.yml.sample
+/config/database.yml
+.DS_Store

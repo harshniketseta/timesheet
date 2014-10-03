@@ -53,4 +53,10 @@ Rails.application.routes.draw do
   #     # (app/controllers/admin/products_controller.rb)
   #     resources :products
   #   end
+
+  devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
+
+  resource :home
+
+  root to: "home#show"
 end
