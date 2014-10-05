@@ -1,6 +1,9 @@
 class HomeController < ApplicationController
 
-  def show
+  def index
+    if current_user.present?
+      redirect_to "/dashboard"
+    end
   end
 
 end

@@ -1,33 +1,40 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Timesheet</title>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <div class="login" style="padding: 5px;">
-    <span class="pull-right">
-      <% if user_signed_in? %>
-        Signed in as <%= current_user.name %>. Not you?
-        <%= link_to "Sign out", destroy_user_session_path, :method => :delete %>
-      <% else %>
-        <a href="<%= user_omniauth_authorize_path(:google_oauth2) %>">
-          <div id="customBtn" class="customGPlusSignIn">
-            <span class="icon"></span>
-            <span class="buttonText">Sign in with Google</span>
-          </div>
-        </a>
+  <head>
+    <title>Timesheet</title>
+    <% if Rails.env == "development" %>
+      <script>
+        Platform = {flags: {debug: true}};
+      </script>
+    <% end %>
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= html_import_tag 'application'%>
+    <%= csrf_meta_tags %>
+
+    <!--<script src="http://www.polymer-project.org/components/platform/platform.js"></script>-->
+
+    <!--<link rel="import" href="http://www.polymer-project.org/components/core-icon-button/core-icon-button.html">-->
+    <!--<link rel="import" href="http://www.polymer-project.org/components/paper-fab/paper-fab.html">-->
+    <!--<link rel="import" href="http://www.polymer-project.org/components/core-tooltip/core-tooltip.html">-->
+    <!--<link rel="import" href="http://www.polymer-project.org/components/paper-input/paper-input.html">-->
+  </head>
+  <body>
+    <%= render :partial => "shared/header" %>
+    <% headerHeight = current_user.present? ? "70px" : "70px" %>
+    <!--<div class="opaque_bg" style="height: <%= headerHeight %>;"></div>-->
+    <div id="main_container">
+      <% if notice %>
+        <p class="alert alert-success"><%= raw (notice.is_a?(Array) ? notice.join("</br>") : notice) %></p>
       <% end %>
-    </span>
-  </div>
+      <% if alert %>
+        <p class="alert alert-danger"><%= raw (alert.is_a?(Array) ? alert.join("</br>") : alert) %></p>
+      <% end %>
 
-  <p class="notice"><%= notice %></p>
-
-  <p class="alert"><%= alert %></p>
-
-<%= yield %>
-
-</body>
+      <div class="col-lg-offset-1 col-md-offset-1 col-lg-10 col-md-10 col-xs-12 marginBottom20" style="height: 100%;">
+        <%= yield %>
+      </div>
+    </div>
+    <%= render :partial => "shared/footer" %>
+  </body>
 </html>
