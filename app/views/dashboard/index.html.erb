@@ -1,3 +1,38 @@
-<core-tooltip label="New Project" class="fancy pull-right" role="tooltip">
-  <paper-fab icon="add" role="button" ></paper-fab>
+<paper-dialog id="newProject" heading="Dialog" transition="paper-dialog-transition-bottom">
+  <%= form_for Project.new() do |f| %>
+
+  <% end %>
+</paper-dialog>
+
+<site-banner type="core" navgroup="docs" shortname="Docs">
+  <app-bar theme="light" class="bar">
+    <a href="/docs/start/tutorial/intro.html" class="paper-button active" borderless="" sink="">Learn</a>
+    <a href="/docs/elements/" class="paper-button " borderless="" sink="">Elements</a>
+    <a href="/resources/faq.html" class="paper-button " borderless="" sink="">Resources</a>
+  </app-bar>
+
+  <header class="">
+    <h1>Projects</h1>
+
+    <summary>All Projects</summary>
+
+  </header>
+</site-banner>
+
+<core-toolbar>
+  <div>Projects</div>
+</core-toolbar>
+<core-tooltip label="New Project" class="fancy pull-right new-project" role="tooltip">
+  <paper-fab icon="add" role="button" onclick="openDialog('#newProject')"></paper-fab>
 </core-tooltip>
+
+<script>
+  function openDialog(selector) {
+    var dialog = $(selector)[0];
+
+    if(!dialog.opened){
+//      $("#appOverlay")[0].toggle();
+      dialog.toggle();
+    }
+  }
+</script>

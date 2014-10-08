@@ -11,19 +11,16 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= html_import_tag 'application'%>
     <%= csrf_meta_tags %>
-
-    <!--<script src="http://www.polymer-project.org/components/platform/platform.js"></script>-->
-
-    <!--<link rel="import" href="http://www.polymer-project.org/components/core-icon-button/core-icon-button.html">-->
-    <!--<link rel="import" href="http://www.polymer-project.org/components/paper-fab/paper-fab.html">-->
-    <!--<link rel="import" href="http://www.polymer-project.org/components/core-tooltip/core-tooltip.html">-->
-    <!--<link rel="import" href="http://www.polymer-project.org/components/paper-input/paper-input.html">-->
   </head>
   <body>
     <%= render :partial => "shared/header" %>
-    <% headerHeight = current_user.present? ? "70px" : "70px" %>
-    <!--<div class="opaque_bg" style="height: <%= headerHeight %>;"></div>-->
-    <div id="main_container">
+    <% headerHeight = current_user.present? ? "72px" : "72px" %>
+    <div class="opaque_bg" style="height: <%= headerHeight %>;"></div>
+    <div id="main_container"
+         style="padding-top: <%= headerHeight %>;"
+         style="height: 100%;">
+      <core-overlay id="appOverlay" style="background-color: rgba(0,0,0,0.1);position: fixed; height: 100%; width: 100%">
+      </core-overlay>
       <% if notice %>
         <p class="alert alert-success"><%= raw (notice.is_a?(Array) ? notice.join("</br>") : notice) %></p>
       <% end %>
