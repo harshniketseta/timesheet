@@ -4,6 +4,18 @@
 
 html, body {height: 100%;}
 
+.alert{
+  width: 50%;
+  margin-left: 25%;
+}
+
+.profileImage{
+  height: 20px;
+  border-radius: 10px;
+  border: 1px solid #000;
+  margin-right: 5px;
+}
+
 #main_container{
   overflow:auto;
   padding-bottom: 30px;
