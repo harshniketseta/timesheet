@@ -7,29 +7,19 @@
         Platform = {flags: {debug: true}};
       </script>
     <% end %>
+    <link rel="import" href="components.html">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-    <%= html_import_tag 'application'%>
+
     <%= csrf_meta_tags %>
   </head>
   <body>
     <%= render :partial => "shared/header" %>
     <% headerHeight = current_user.present? ? "72px" : "72px" %>
     <div class="opaque_bg" style="height: <%= headerHeight %>;"></div>
-    <div id="main_container"
-         style="padding-top: <%= headerHeight %>;"
-         style="height: 100%;">
-      <% if notice %>
-        <p class="alert alert-success"><%= raw (notice.is_a?(Array) ? notice.join("</br>") : notice) %></p>
-      <% end %>
-      <% if alert %>
-        <p class="alert alert-danger"><%= raw (alert.is_a?(Array) ? alert.join("</br>") : alert) %></p>
-      <% end %>
 
-      <div class="col-lg-offset-1 col-md-offset-1 col-lg-10 col-md-10 col-xs-12 marginBottom20">
-        <%= yield %>
-      </div>
-    </div>
+    <%= yield %>
+
     <%= render :partial => "shared/footer" %>
   </body>
 </html>

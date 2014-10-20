@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '4.0.1'
+gem 'rails', '4.1.4'
 # Use mysql2 as the database for Active Record
 gem 'mysql2'
 
@@ -9,8 +9,7 @@ gem 'mysql2'
 gem 'bootstrap-sass', '~> 3.2.0'
 
 # Use SCSS for stylesheets
-gem 'sass-rails', '~> 4.0.0'
-
+gem 'sass-rails', '~> 4.0.3'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use CoffeeScript for .js.coffee assets and views
@@ -37,15 +36,6 @@ gem 'omniauth'
 # Google App OAuth.
 gem "omniauth-google-oauth2"
 
-# Using polymer material design.
-gem 'polymer-rails'
-gem 'polymer-core-rails'
-gem 'polymer-paper-rails'
-
-gem 'compass', "> 1.1.0.alpha"
-gem 'compass-rails', '1.1.7'
-gem 'chosen-rails'
-
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
@@ -57,5 +47,4 @@ gem 'chosen-rails'
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
-
 

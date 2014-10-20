@@ -18,7 +18,7 @@
 /tmp
 /test/*
 .rvmrc
-/public/uploads/*
+/public/components/*
 # Ignore database.yml
 # Copy database.yml.sample
 /config/database.yml
