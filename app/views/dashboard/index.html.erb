@@ -1,30 +1,18 @@
-<scroll-area>
-  <site-banner type="platform" navgroup="docs" shortname="Platform">
-
-
-    <app-bar theme="light" class="bar">
-      <a href="/dashboard/active" class="paper-button">Active</a>
-      <a href="/dashboard/latest" class="paper-button">Latest</a>
-      <a href="/dashboard/oldest" class="paper-button">Oldest</a>
-    </app-bar>
-
-    <header>
-      <h1>Projects</h1>
-
-      <summary>All Projects</summary>
-
-    </header>
-  </site-banner>
-
-  <% if notice %>
-    <p class="alert alert-success"><%= raw (notice.is_a?(Array) ? notice.join("</br>") : notice) %></p>
-  <% end %>
-  <% if alert %>
-    <p class="alert alert-danger"><%= raw (alert.is_a?(Array) ? alert.join("</br>") : alert) %></p>
-  <% end %>
-
+<div class="banner">
+  <div class="menu-bar">
+    <a href="/dashboard/active">Active</a>
+    <a href="/dashboard/latest">Latest</a>
+    <a href="/dashboard/deleted">Deleted</a>
+  </div>
+  <div class="title main">Projects</div>
+  <div class="title summary">All Projects</div>
+</div>
+<div class="actionsWrap">
   <core-tooltip label="New Project" class="fancy pull-right new-project" role="tooltip">
-    <paper-fab icon="add" role="button" onclick="openDialog('#newProject')"></paper-fab>
+    <paper-fab icon="add" role="button"></paper-fab>
   </core-tooltip>
+</div>
 
-</scroll-area>
+<div class="projectWrap">
+  <%= render :partial => "projectTile" %>
+</div>

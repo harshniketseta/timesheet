@@ -6,7 +6,11 @@ Rails.application.routes.draw do
 
   resources :home, :only => [:index]
   resources :dashboard, :only => [:index]
-  resources :projects
+  resources :projects do
+    member do
+      post :restore
+    end
+  end
 
   root to: "home#index"
 end

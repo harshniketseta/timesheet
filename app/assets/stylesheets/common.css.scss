@@ -4,6 +4,18 @@
 
 html, body {height: 100%;}
 
+body{
+  overflow: hidden;
+}
+
+#main_container{
+  overflow:auto;
+  padding-bottom: 30px;
+  min-height: 100%;
+  overflow: scroll;
+  z-index: 5;
+}
+
 .alert{
   width: 50%;
   margin-left: 25%;
@@ -17,207 +29,9 @@ html, body {height: 100%;}
   margin-right: 5px;
 }
 
-#main_container{
-  overflow:auto;
-  padding-bottom: 30px;
-  min-height: 100%;
-  overflow: scroll;
-  z-index: 5;
-}
-
 .opaque_bg{
   position: relative;
   background-color: white;
   width: 100%;
   z-index: 7;
-}
-
-#title{
-  font-size: 18px;
-  font-weight: bold;
-}
-
-#header{
-  display: inline-block;
-  width: 100%;
-  position: fixed;
-  z-index: 10;
-}
-
-.form_title{
-  font-size: 18px;
-}
-
-
-#new_admin {
-  font-family: 'Helvetica Neue', Helvetica, Arial, Geneva, sans-serif;
-}
-
-#new_admin > div:first-child {
-  margin-top: 10px;
-}
-
-#new_admin div {
-  //  display: inline-block;
-  margin-bottom: 10px;
-}
-
-#new_admin > *:first-child > span {
-  margin-top: 10px;
-}
-
-#new_admin > input:disabled{
-  background: #DCDCDC ;
-}
-
-#new_admin input[type=email], #new_admin input[type=password], #new_admin input[type=text]{
-  border-radius: 3px;
-  border: none;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) inset, 0 -1px 0 rgba(0, 0, 0, 0.05) inset;
-  transition: all 0.2s linear;
-  font-family: "Helvetica Neue", sans-serif;
-  font-size: 13px;
-  color: #222222;
-  position: relative;
-  height: 36px;
-  width: 300px;
-  padding-left: 10px;
-
-  &::-webkit-input-placeholder {
-    color: #999999;
-  }
-
-  &:-moz-placeholder {
-    color: #999999;
-  }
-
-  &:focus {
-    box-shadow: 0 1px 0 #2392F3 inset, 0 -1px 0 #2392F3 inset, 1px 0 0 #2392F3 inset, -1px 0 0 #2392F3 inset, 0 0 4px rgba(35, 146, 243, 0.5);
-    outline: none;
-  }
-}
-
-#new_admin input[type=submit] {
-  display: block;
-  z-index: 3;
-  width: 155px;
-  height: 53px;
-  background-color: #f7941d;
-  background: -webkit-linear-gradient(#da1931,#da1931);
-  background: -moz-linear-gradient(#da1931,#da1931);
-  background: -ms-linear-gradient(#da1931,#da1931);
-  background: -o-linear-gradient(#da1931,#da1931);
-  background: linear-gradient(#da1931,#da1931);
-  text-shadow: 1px 1px #4d0104;
-  -pie-background: linear-gradient(#da1931,#da1931);
-  color: #fff;
-  border-style: none;
-  font-size: 21px;
-  line-height: 25px;
-  font-weight: normal;
-  //  font-family: Open Sans;
-  text-align: center;
-  background-repeat: no-repeat;
-}
-
-#edit_admin {
-  font-family: 'Helvetica Neue', Helvetica, Arial, Geneva, sans-serif;
-}
-
-#edit_admin > div:first-child {
-  margin-top: 10px;
-}
-
-#edit_admin div {
-  //  display: inline-block;
-  margin-bottom: 10px;
-}
-
-#edit_admin > *:first-child > span {
-  margin-top: 10px;
-}
-
-#edit_admin > input:disabled{
-  background: #DCDCDC ;
-}
-
-#edit_admin input[type=email], #edit_admin input[type=password], #edit_admin input[type=text]{
-  border-radius: 3px;
-  border: none;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) inset, 0 -1px 0 rgba(0, 0, 0, 0.05) inset;
-  transition: all 0.2s linear;
-  font-family: "Helvetica Neue", sans-serif;
-  font-size: 13px;
-  color: #222222;
-  position: relative;
-  height: 36px;
-  width: 300px;
-  padding-left: 10px;
-
-  &::-webkit-input-placeholder {
-    color: #999999;
-  }
-
-  &:-moz-placeholder {
-    color: #999999;
-  }
-
-  &:focus {
-    box-shadow: 0 1px 0 #2392F3 inset, 0 -1px 0 #2392F3 inset, 1px 0 0 #2392F3 inset, -1px 0 0 #2392F3 inset, 0 0 4px rgba(35, 146, 243, 0.5);
-    outline: none;
-  }
-}
-
-#edit_admin input[type=submit] {
-  display: block;
-  z-index: 3;
-  width: 155px;
-  height: 53px;
-  background-color: #f7941d;
-  background: -webkit-linear-gradient(#da1931,#da1931);
-  background: -moz-linear-gradient(#da1931,#da1931);
-  background: -ms-linear-gradient(#da1931,#da1931);
-  background: -o-linear-gradient(#da1931,#da1931);
-  background: linear-gradient(#da1931,#da1931);
-  text-shadow: 1px 1px #4d0104;
-  -pie-background: linear-gradient(#da1931,#da1931);
-  color: #fff;
-  border-style: none;
-  font-size: 21px;
-  line-height: 25px;
-  font-weight: normal;
-  //  font-family: Open Sans;
-  text-align: center;
-  background-repeat: no-repeat;
-}
-
-#footer{
-//  width: 100%;
-//  height: 30px;
-//  clear: both;
-//  -webkit-box-shadow: 0px -4px 10px 2px rgba(0,0,0,0.25);
-//  -moz-box-shadow: 0px -4px 10px 2px rgba(0,0,0,0.25);
-//  box-shadow: 0px -4px 10px 2px rgba(0,0,0,0.25);
-//  position: relative;
-//  margin-top: -30px;
-}
-
-.padding5{
-  padding: 5px;
-}
-
-.pointer{
-  cursor: pointer;
-}
-
-.marginBottom20{
-  margin-bottom: 20px;
-}
-
-.vertical-center{
-  min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
-  min-height: 100vh; /* These two lines are counted as one :-)       */
-
-  display: flex;
-  align-items: center;
 }

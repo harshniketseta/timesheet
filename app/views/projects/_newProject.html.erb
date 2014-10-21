@@ -1,0 +1,32 @@
+<div class="modal fade" id="create_project" tabindex="-1" role="dialog" aria-labelledby="create_project" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="create_user_setLabel">Create Project</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for Project.new, url: {controller: "projects", action: "create"} do |f| %>
+          <div class="table-responsive">
+            <div style="display: inline-block; width:100%" >
+              <span class="col-lg-12 col-md-12 col-xs-12">
+                <%= f.text_field :name, :class => 'form-control',
+                                 :name => "project[name]", :required => "true", :placeholder => "Name"%>
+              </span>
+            </div>
+            <div style="display: inline-block; width:100%" >
+              <span class="col-lg-12 col-md-12 col-xs-12">
+                <%= f.text_field :description, :class => 'form-control',
+                                 :name => "project[description]", :required => "true", :placeholder => "Description"%>
+              </span>
+            </div>
+          </div>
+        <%- end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default negative" data-dismiss="modal">Cancel</button>
+        <button type="submit" form="new_project" class="btn btn-primary positive">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>

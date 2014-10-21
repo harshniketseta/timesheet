@@ -1,0 +1,24 @@
+<div class="banner maximized">
+  <div class="menu-bar">
+    <a href="<%= project_path(@project) %>/members">Members</a>
+    <a href="<%= project_path(@project) %>/todos">Todo's</a>
+    <a href="<%= project_path(@project) %>/timeline">Timeline</a>
+  </div>
+  <div class="title main"><%= @project.name %></div>
+  <div class="title summary"><%= @project.description %></div>
+
+  <div class="actionsWrap">
+    <core-tooltip label="New Project" class="fancy pull-right create-project" role="tooltip">
+      <paper-fab icon="add" role="button"></paper-fab>
+    </core-tooltip>
+  </div>
+</div>
+
+<div class="bannerBG maximized" style="display: none;">
+
+</div>
+
+<div class="projectWrap row maximized">
+</div>
+
+<%= render :partial => "newProject" %>

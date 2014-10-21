@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141005110250) do
+ActiveRecord::Schema.define(version: 20141021153841) do
 
   create_table "permissions", force: true do |t|
     t.string   "permission", limit: 100
@@ -32,6 +32,8 @@ ActiveRecord::Schema.define(version: 20141005110250) do
     t.integer  "parent_project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "description"
+    t.boolean  "trashed"
   end
 
   create_table "role_permissions", force: true do |t|
