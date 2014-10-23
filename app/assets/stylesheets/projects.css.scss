@@ -95,10 +95,8 @@
   color: white;
 }
 
-.row {
+.row.margin0 {
   margin: 0px;
-  margin-left: -10px;
-  margin-right: -10px;
 }
 
 .projectWrap {
@@ -168,4 +166,10 @@
 
 .projectContent > .actionsWrap > a:first-child {
   margin-right: 0px;
+}
+.clickable{
+  cursor: pointer;
+}
+.clickable > *{
+  cursor: pointer;
 }

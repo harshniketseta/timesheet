@@ -25,3 +25,12 @@
 </div>
 
 <%= render :partial => "newProject" %>
+<%= render :partial => "addMember" %>
+
+<% content_for :endjs do %>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      timesheet.projects();
+    });
+  </script>
+<% end %>

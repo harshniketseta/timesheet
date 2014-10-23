@@ -22,10 +22,10 @@ Role.create([
                 {:name => "Project Coordinator"},
                 {:name => "Happiness Officer"},
             ])
-
-Permission.create([
-                {:name => "Add Project"},
-                {:name => "Edit Project"},
-                {:name => "Add Members"},
-                {:name => "Remove Members"},
-            ])
+#
+# Permission.create([
+#                 {:name => "Add Project"},
+#                 {:name => "Edit Project"},
+#                 {:name => "Add Members"},
+#                 {:name => "Remove Members"},
+#             ])

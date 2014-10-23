@@ -38,6 +38,9 @@ gem 'omniauth'
 # Google App OAuth.
 gem "omniauth-google-oauth2"
 
+# Select2 for autocompletors
+gem "select2-rails"
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

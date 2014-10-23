@@ -3,13 +3,16 @@
   <div class="projectContent">
     <div class="actionsWrap">
       <% unless project.trashed %>
-        <%= link_to content_tag(:span, "", class: "glyphicon glyphicon-pencil"),
-                    edit_project_path(project), title: "Edit Project"
-        %>
         <%= link_to content_tag(:span, "", class: "glyphicon glyphicon-trash"),
                     project_path(project),
                     method: :delete, data: {confirm: 'Are you certain you want to remove this project?'},
                     title: "Remove Project"
+        %>
+        <%= link_to content_tag(:span, "", class: "glyphicon glyphicon-plus"),
+                    "#addMember_#{project.id}", title: "Add Members", class: "addMember"
+        %>
+        <%= link_to content_tag(:span, "", class: "glyphicon glyphicon-pencil"),
+                    "", title: "Edit Project"
         %>
       <% else %>
         <%= link_to content_tag(:span, "", class: "fa fa-undo"),
@@ -17,10 +20,10 @@
         %>
       <% end %>
     </div>
-    <div class="projectInfo">
-      <label class="name"><%= project.name %></label>
-      <label class="description"><%= project.description %></label>
-    </div>
-
+      <div class="projectInfo clickable" href="<%= project_path(project) %>">
+        <label class="name"><%= project.name %></label>
+        <label class="description"><%= project.description %></label>
+      </div>
+    </a>
   </div>
 </div>

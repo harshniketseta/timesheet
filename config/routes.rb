@@ -4,13 +4,15 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { omniauth_callbacks: "omniauth_callbacks" }
 
-  resources :home, :only => [:index]
-  resources :dashboard, :only => [:index]
+  resources :home, only: [:index]
+  resources :dashboard, only: [:index]
   resources :projects do
     member do
       post :restore
     end
   end
+  resources :project_users, only: [:create]
+  post "lists/:type" => "lists#show"
 
   root to: "home#index"
 end

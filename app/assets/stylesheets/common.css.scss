@@ -1,6 +1,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "polymer";
+@import "select2";
+@import "select2/select2-bootstrap";
 
 html, body {height: 100%;}
 
@@ -34,4 +36,8 @@ body{
   background-color: white;
   width: 100%;
   z-index: 7;
+}
+
+.paddingTB10{
+  padding: 10px 0px;
 }
