@@ -1,4 +1,5 @@
 class Project < ActiveRecord::Base
+  has_many :members, class: ProjectUser
 
   default_scope { where(:trashed => false) }
 

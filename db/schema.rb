@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141021153841) do
+ActiveRecord::Schema.define(version: 20141023173700) do
 
   create_table "permissions", force: true do |t|
     t.string   "permission", limit: 100
@@ -26,6 +26,8 @@ ActiveRecord::Schema.define(version: 20141021153841) do
     t.datetime "created_at"
     t.datetime "updated_at"
   end
+
+  add_index "project_users", ["project_id", "user_id"], name: "index_project_users_on_project_id_and_user_id", unique: true, using: :btree
 
   create_table "projects", force: true do |t|
     t.string   "name",              limit: 40

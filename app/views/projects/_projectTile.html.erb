@@ -20,10 +20,14 @@
         %>
       <% end %>
     </div>
-      <div class="projectInfo clickable" href="<%= project_path(project) %>">
-        <label class="name"><%= project.name %></label>
-        <label class="description"><%= project.description %></label>
-      </div>
-    </a>
+
+    <div class="tileContent">
+      <label>Members: <%= project.members.count() %></label>
+    </div>
+    <div class="projectInfo clickable" href="<%= project_path(project) %>">
+      <label class="name"><%= project.name %></label>
+      <label class="description"><%= project.description %></label>
+    </div>
+
   </div>
 </div>
