@@ -35,7 +35,8 @@ var Timesheet = (function () {
 
     var subApps = {
       "helper": "Helper",
-      "projects": "Projects"
+      "projects": "Projects",
+      "tasks": "Tasks"
     }
 
     /*
@@ -215,7 +216,7 @@ var _Helper = {
    Review:
    */
   initPriceOnlyField: function () {
-    $(".priceOnlyField").on("keypress", function (evt) {
+    $(".floatOnlyField").on("keypress", function (evt) {
       var charCode = (evt.which) ? evt.which : event.keyCode
         , character = String.fromCharCode(charCode)
         ;

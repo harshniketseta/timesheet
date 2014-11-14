@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :home, only: [:index]
   resources :dashboard, only: [:index]
   resources :projects do
+    resources :tasks
     member do
       post :restore
     end

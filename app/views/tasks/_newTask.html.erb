@@ -1,0 +1,85 @@
+<div class="modal fade" id="create_task" tabindex="-1" role="dialog" aria-labelledby="create_project" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title">Create Task</h4>
+      </div>
+      <div class="modal-body">
+        <%= form_for @project.tasks.new, url: {controller: "tasks", action: "create"} do |f| %>
+          <div class="table-responsive">
+            <div class="row margin0 hide">
+              <span class="col-lg-12 col-md-12 col-xs-12 marginTB10">
+                <%= f.text_field :project_id,
+                                 :class => 'form-control',
+                                 :required => "true",
+                                 :placeholder => "Name"
+                %>
+              </span>
+            </div>
+            <div class="row margin0">
+              <span class="col-lg-12 col-md-12 col-xs-12 marginTB10">
+                <%= f.text_field :title,
+                                 :class => 'form-control',
+                                 :required => "true",
+                                 :placeholder => "Title"
+                %>
+              </span>
+            </div>
+            <div class="row margin0">
+              <span class="col-lg-12 col-md-12 col-xs-12 marginTB10">
+                <%= f.text_field :description,
+                                 :class => 'form-control',
+                                 :required => "true",
+                                 :placeholder => "Description"
+                %>
+              </span>
+            </div>
+            <div class="row margin0">
+              <span class="col-lg-12 col-md-12 col-xs-12 marginTB10">
+                <%= f.text_field :assigned_id,
+                                 :class => 'form-control memberSelect2Input',
+                                 :required => "true",
+                                 :placeholder => "Assign to",
+                                 "data-url" => "/lists/members"
+                %>
+              </span>
+            </div>
+            <div class="row margin0">
+              <label style="margin-left: 15px;line-height: 50px;float: left;">Priority</label>
+              <span class="col-lg-12 col-md-12 col-xs-12 marginTB10" style="padding-right: 65px;margin-right: -65px;float: left;">
+                <paper-slider class="pull-left" snaps="true" pin="true" min="1" max="10" value="3" style="width: 100%;"></paper-slider>
+              </span>
+            </div>
+            <div class="row margin0 hide">
+              <span class="col-lg-12 col-md-12 col-xs-12 marginTB10">
+                <%= f.text_field :priority,
+                                 :class => 'form-control',
+                                 :required => "true",
+                                 :placeholder => "Priority"
+                %>
+              </span>
+            </div>
+            <div class="row margin0">
+              <label style="margin-left: 15px;line-height: 50px;float: left;">Completion</label>
+              <span class="col-lg-12 col-md-12 col-xs-12 marginTB10" style="padding-right: 100px;margin-right: -100px;float: left;">
+                <span class="col-lg-6 col-md-6 col-xs-6" style="padding-right: 50px;margin-right: -50px;">
+                  <input type="number" class="form-control numberOnlyField" placeholder="Hours" name="task[to_complete_hours]" value="4" min="0"/>
+                </span>
+                <label class="inputAfterLabel">Hrs.</label>
+                <span class="col-lg-6 col-md-6 col-xs-6" style="padding-right: 50px;margin-right: -50px;">
+                  <input type="number" class="form-control numberOnlyField" placeholder="Minutes" name="task[to_complete_minutes]" value="0" min="0" max="59"/>
+                </span>
+                <label class="inputAfterLabel">Mins.</label>
+              </span>
+            </div>
+          </div>
+        <%- end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default negative" data-dismiss="modal">Cancel</button>
+        <button type="submit" form="new_task" class="btn btn-primary positive">Submit</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141023173700) do
+ActiveRecord::Schema.define(version: 20141024062825) do
 
   create_table "permissions", force: true do |t|
     t.string   "permission", limit: 100
@@ -47,6 +47,20 @@ ActiveRecord::Schema.define(version: 20141023173700) do
 
   create_table "roles", force: true do |t|
     t.string   "name",       limit: 100
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tasks", force: true do |t|
+    t.integer  "project_id"
+    t.integer  "assigned_id"
+    t.integer  "assignor_id"
+    t.string   "title"
+    t.string   "description"
+    t.integer  "priority"
+    t.integer  "estimated_time_for_completion"
+    t.integer  "time_for_completion"
+    t.integer  "state"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

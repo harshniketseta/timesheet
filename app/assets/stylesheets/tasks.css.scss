@@ -1,0 +1,68 @@
+// Place all the styles related to the Tasks controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.taskTile {
+
+}
+
+.inputAfterLabel {
+  width: 50px;
+  float: left;
+  line-height: 34px;
+  padding-left: 10px;
+  font-weight: normal;
+}
+
+paper-slider {
+  border: 1px #ccc white;
+  box-sizing: border-box;
+}
+
+paper-slider:focus {
+  border: 1px #ccc solid;
+}
+
+//slider progress bar
+paper-slider.blue::shadow #sliderBar::shadow #activeProgress {
+  background-color: #3f51b5;
+}
+
+paper-slider.orange::shadow #sliderBar::shadow #activeProgress {
+  background-color: darkorange;
+}
+
+paper-slider.red::shadow #sliderBar::shadow #activeProgress {
+  background-color: red;
+}
+
+//slider knob
+paper-slider.blue::shadow #sliderKnobInner {
+  background-color: #3f51b5;
+}
+
+paper-slider.orange::shadow #sliderKnobInner {
+  background-color: darkorange;
+}
+
+paper-slider.red::shadow #sliderKnobInner {
+  background-color: red;
+}
+
+//slider pin
+paper-slider.blue::shadow #sliderKnobInner::before {
+  background-color: #3f51b5;
+}
+
+paper-slider.orange::shadow #sliderKnobInner::before {
+  background-color: darkorange;
+}
+
+paper-slider.red::shadow #sliderKnobInner::before {
+  background-color: red;
+}
+
+//slider pin's value
+paper-slider::shadow #sliderKnobInner::after {
+  color: #0f9d58
+}

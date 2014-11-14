@@ -1,0 +1,33 @@
+<div class="banner maximized">
+  <div class="menu-bar">
+    <a href="/projects?type=active" <%= @type == "active" ? 'class=active' : '' %>>Active</a>
+    <a href="/projects?type=today" <%= @type == "today" ? 'class=active' : '' %>>Today</a>
+    <a href="/projects?type=completed" <%= @type == "completed" ? 'class=active' : '' %>>Completed</a>
+  </div>
+  <div class="title main"><%= @project.name %></div>
+  <div class="title summary">Tasks</div>
+
+  <div class="actionsWrap">
+    <core-tooltip label="Add Task" class="fancy pull-right add-task" role="tooltip">
+      <paper-fab icon="add" role="button"></paper-fab>
+    </core-tooltip>
+  </div>
+</div>
+
+<div class="bannerBG maximized" style="display: none;"></div>
+
+<div class="tasksWrap row maximized">
+  <div class="taskTile">
+
+  </div>
+</div>
+
+<%= render :partial => "newTask" %>
+
+<% content_for :endjs do %>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      timesheet.tasks();
+    });
+  </script>
+<% end %>

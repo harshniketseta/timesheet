@@ -1,5 +1,6 @@
 class Project < ActiveRecord::Base
   has_many :members, class: ProjectUser
+  has_many :tasks
 
   default_scope { where(:trashed => false) }
 

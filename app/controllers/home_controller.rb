@@ -2,7 +2,7 @@ class HomeController < ApplicationController
 
   def index
     if current_user.present?
-      redirect_to project_path
+      redirect_to projects_path
     end
   end
 
