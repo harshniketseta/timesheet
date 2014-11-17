@@ -7,14 +7,14 @@
 default: &default
   adapter: mysql2
   encoding: utf8
+  username: root
+  password: root
+  host: localhost
   reconnect: true
   pool: 5
 
 development:
   <<: *default
-  username: timesheet
-  password: timesheet
-  host: localhost
   database: timesheet_dev
 
 # Warning: The database defined as "test" will be erased and
