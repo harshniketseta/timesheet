@@ -16,6 +16,8 @@
 //= require select2
 //= require bootstrap.js
 //= require bootstrap-sprockets.js
+//= require moment
+//= require bootstrap-datetimepicker
 
 /* Adds methods to a Javascript Prototype Object (pseudo-Class) */
 Function.prototype.method = function (name, func) {

@@ -43,6 +43,7 @@ gem "select2-rails"
 
 # Bootstrap Datetime picker
 gem 'momentjs-rails', '>= 2.8.1'
+gem 'bootstrap3-datetimepicker-rails', '~> 3.1.3'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
