@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141024062825) do
+ActiveRecord::Schema.define(version: 20141117122606) do
 
   create_table "permissions", force: true do |t|
     t.string   "permission", limit: 100
@@ -63,6 +63,8 @@ ActiveRecord::Schema.define(version: 20141024062825) do
     t.integer  "state"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.datetime "from_date"
+    t.datetime "to_date"
   end
 
   create_table "users", force: true do |t|

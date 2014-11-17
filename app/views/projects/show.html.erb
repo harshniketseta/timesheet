@@ -7,11 +7,11 @@
   <div class="title main"><%= @project.name %></div>
   <div class="title summary"><%= @project.description %></div>
 
-  <div class="actionsWrap">
-    <core-tooltip label="New Project" class="fancy pull-right create-project" role="tooltip">
-      <paper-fab icon="add" role="button"></paper-fab>
-    </core-tooltip>
-  </div>
+  <!--<div class="actionsWrap">-->
+    <!--<core-tooltip label="Add Task" class="fancy pull-right add-task" role="tooltip">-->
+      <!--<paper-fab icon="add" role="button"></paper-fab>-->
+    <!--</core-tooltip>-->
+  <!--</div>-->
 </div>
 
 <div class="bannerBG maximized" style="display: none;">
@@ -20,5 +20,3 @@
 
 <div class="projectWrap row maximized">
 </div>
-
-<%= render :partial => "newProject" %>

@@ -11,6 +11,7 @@ var Timesheet = (function(Timesheet) {
     var self = this;
 
     self.initEventListeners();
+    self.initDateTimePickers();
   });
 
   Timesheet.Tasks.method("initEventListeners", function(){
@@ -53,6 +54,23 @@ var Timesheet = (function(Timesheet) {
       });
     });
   });
+
+    Timesheet.Tasks.method("initDateTimePickers", function () {
+
+     var self = this;
+
+     $(".from_date").datetimepicker({
+       showToday: true,
+       pickTime: false,
+       showTimezone: true
+     });
+
+     $(".to_date").datetimepicker({
+       showToday: true,
+       pickTime: false,
+       showTimezone: true
+     });
+   });
 
   return Timesheet;
 })(Timesheet);
