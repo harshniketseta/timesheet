@@ -5,8 +5,8 @@
       <% unless project.trashed %>
         <%= link_to content_tag(:span, "", class: "glyphicon glyphicon-trash"),
                     project_path(project),
-                    method: :delete, data: {confirm: 'Are you certain you want to remove this project?'},
-                    title: "Remove Project"
+                    method: :delete, data: {confirm: 'Are you certain you want to delete this project?'},
+                    title: "Delete Project"
         %>
         <%= link_to content_tag(:span, "", class: "fa fa-tasks"),
                     project_tasks_path(project), title: "Tasks"
@@ -15,7 +15,7 @@
                     "#addMember_#{project.id}", title: "Add Members", class: "addMember"
         %>
         <%= link_to content_tag(:span, "", class: "glyphicon glyphicon-pencil"),
-                    "", title: "Edit Project"
+                    edit_project_path(project), title: "Edit Project", class: "editProject"
         %>
       <% else %>
         <%= link_to content_tag(:span, "", class: "fa fa-undo"),
