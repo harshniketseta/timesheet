@@ -49,6 +49,10 @@ var Timesheet = (function(Timesheet) {
         });
     });
 
+    $(".positive").on("click", function(event){
+      $('.edit_project').submit();
+    });
+
     $(".clickable").on("click", function(event){
       event.preventDefault();
 
