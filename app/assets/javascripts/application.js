@@ -18,6 +18,8 @@
 //= require bootstrap-sprockets.js
 //= require moment
 //= require bootstrap-datetimepicker
+//= require jquery-ui/jquery-ui.min.js
+//= require rangecalendar/jquery.rangecalendar.js
 
 /* Adds methods to a Javascript Prototype Object (pseudo-Class) */
 Function.prototype.method = function (name, func) {

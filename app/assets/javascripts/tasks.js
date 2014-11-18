@@ -12,6 +12,7 @@ var Timesheet = (function(Timesheet) {
 
     self.initEventListeners();
     self.initDateTimePickers();
+    self.initRangeCalendar();
   });
 
   Timesheet.Tasks.method("initEventListeners", function(){
@@ -72,5 +73,10 @@ var Timesheet = (function(Timesheet) {
      });
    });
 
+    Timesheet.Tasks.method("initRangeCalendar", function(){
+        var self = this;
+
+        self.rangeCalendar = $("#range-calendar").rangeCalendar();
+    });
   return Timesheet;
 })(Timesheet);

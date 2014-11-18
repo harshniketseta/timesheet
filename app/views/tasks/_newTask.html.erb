@@ -37,44 +37,26 @@
             </div>
             <div class="row margin0">
               <span class="col-lg-12 col-md-12 col-xs-12 marginTB10">
-                <div class='input-group date from_date'>
-                  <input value=""
-                         class="form-control"
-                         name="task[from_date]"
-                         data-date-format="MM/DD/YYYY hh:mm A"
-                         placeholder="From Datetime"
-                         required
-                  />
-                  <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar"></span>
-                  </span>
-                </div>
-              </span>
-            </div>
-            <div class="row margin0">
-              <span class="col-lg-12 col-md-12 col-xs-12 marginTB10">
-                <div class='input-group date to_date'>
-                  <input value=""
-                         class="form-control"
-                         name="task[to_date]"
-                         data-date-format="MM/DD/YYYY hh:mm A"
-                         placeholder="To Datetime"
-                         required
-                  />
-                  <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-calendar"></span>
-                  </span>
-                </div>
-              </span>
-            </div>
-            <div class="row margin0">
-              <span class="col-lg-12 col-md-12 col-xs-12 marginTB10">
                 <%= f.text_field :assigned_id,
                                  :class => 'form-control memberSelect2Input',
                                  :required => "true",
                                  :placeholder => "Assign to",
                                  "data-url" => "/lists/members"
                 %>
+              </span>
+            </div>
+            <div id="range-calendar"></div>
+            <div class="row margin0">
+              <label style="margin-left: 15px;line-height: 50px;float: left;">Completion</label>
+              <span class="col-lg-12 col-md-12 col-xs-12 marginTB10" style="padding-right: 100px;margin-right: -100px;float: left;">
+                <span class="col-lg-6 col-md-6 col-xs-6" style="padding-right: 50px;margin-right: -50px;">
+                  <input type="number" class="form-control numberOnlyField" placeholder="Hours" name="task[to_complete_hours]" value="4" min="0"/>
+                </span>
+                <label class="inputAfterLabel">Hrs.</label>
+                <span class="col-lg-6 col-md-6 col-xs-6" style="padding-right: 50px;margin-right: -50px;">
+                  <input type="number" class="form-control numberOnlyField" placeholder="Minutes" name="task[to_complete_minutes]" value="0" min="0" max="59"/>
+                </span>
+                <label class="inputAfterLabel">Mins.</label>
               </span>
             </div>
             <div class="row margin0">
@@ -90,19 +72,6 @@
                                  :required => "true",
                                  :placeholder => "Priority"
                 %>
-              </span>
-            </div>
-            <div class="row margin0">
-              <label style="margin-left: 15px;line-height: 50px;float: left;">Completion</label>
-              <span class="col-lg-12 col-md-12 col-xs-12 marginTB10" style="padding-right: 100px;margin-right: -100px;float: left;">
-                <span class="col-lg-6 col-md-6 col-xs-6" style="padding-right: 50px;margin-right: -50px;">
-                  <input type="number" class="form-control numberOnlyField" placeholder="Hours" name="task[to_complete_hours]" value="4" min="0"/>
-                </span>
-                <label class="inputAfterLabel">Hrs.</label>
-                <span class="col-lg-6 col-md-6 col-xs-6" style="padding-right: 50px;margin-right: -50px;">
-                  <input type="number" class="form-control numberOnlyField" placeholder="Minutes" name="task[to_complete_minutes]" value="0" min="0" max="59"/>
-                </span>
-                <label class="inputAfterLabel">Mins.</label>
               </span>
             </div>
           </div>
