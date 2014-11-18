@@ -16,3 +16,6 @@ Rails.application.config.assets.precompile += %w( tasks.css )
 
 Rails.application.config.assets.precompile += %w( home.js )
 Rails.application.config.assets.precompile += %w( home.css )
+
+Rails.application.config.assets.precompile += %w( timelines.js )
+Rails.application.config.assets.precompile += %w( timelines.css )
