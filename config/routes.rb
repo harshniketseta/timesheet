@@ -15,5 +15,10 @@ Rails.application.routes.draw do
   resources :project_users, only: [:create]
   post "lists/:type" => "lists#show"
 
+  resource :timeline do
+    member do
+      get :tasks
+    end
+  end
   root to: "home#index"
 end

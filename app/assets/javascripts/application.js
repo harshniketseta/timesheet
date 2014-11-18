@@ -16,6 +16,9 @@
 //= require select2
 //= require bootstrap.js
 //= require bootstrap-sprockets.js
+//= require underscore/underscore-min.js
+//= require moment/moment.js
+//= require bootstrap-calendar/calendar.min.js
 
 /* Adds methods to a Javascript Prototype Object (pseudo-Class) */
 Function.prototype.method = function (name, func) {
@@ -36,7 +39,8 @@ var Timesheet = (function () {
     var subApps = {
       "helper": "Helper",
       "projects": "Projects",
-      "tasks": "Tasks"
+      "tasks": "Tasks",
+      "timeline": "Timeline"
     }
 
     /*
