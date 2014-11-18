@@ -52,5 +52,4 @@ gem "select2-rails"
 # Use debugger
 # gem 'debugger', group: [:development, :test]
 
-gem 'pry', group: [:development]
 
