@@ -14,8 +14,8 @@ class TimelinesController < ApplicationController
             title: "Event 1",
             url: "http://example.com",
             class: "event-important",
-            start: Time.now.beginning_of_day.to_i,
-            end: (Time.now + 2.days).end_of_day.to_i
+            start: (Time.now.beginning_of_day.to_i * 1000).to_s,
+            end: ((Time.now + 2.days).end_of_day.to_i * 1000).to_s
 			}
 		]
 	}
