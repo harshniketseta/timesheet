@@ -11,6 +11,8 @@ var Timesheet = (function(Timesheet) {
     var self = this;
 
     self.initEventListeners();
+    self.initDateTimePickers();
+    self.initRangeCalendar();
   });
 
   Timesheet.Tasks.method("initEventListeners", function(){
@@ -53,6 +55,39 @@ var Timesheet = (function(Timesheet) {
       });
     });
   });
+
+    Timesheet.Tasks.method("initDateTimePickers", function () {
+
+     var self = this;
+
+     $(".from_date").datetimepicker({
+       showToday: true,
+       pickTime: false,
+       showTimezone: true
+     });
+
+     $(".to_date").datetimepicker({
+       showToday: true,
+       pickTime: false,
+       showTimezone: true
+     });
+   });
+
+    Timesheet.Tasks.method("initRangeCalendar", function(){
+      var self = this;
+      self.rangeCalendar = $("#range-calendar").rangeCalendar({
+          theme:"default-theme",
+          startDate: moment(),
+          endDate: moment().add('months', 12),
+          weekends: false,
+          changeRangeCallback: self.initChangerangeCal});
+    });
+
+    Timesheet.Tasks.method("initChangerangeCal", function(target,range){
+
+      $(target).parent().find("[name='task[estimated_time_for_completion]']").val(range.width * 8);
+
+    });
 
   return Timesheet;
 })(Timesheet);

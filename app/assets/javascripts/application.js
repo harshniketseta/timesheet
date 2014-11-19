@@ -19,6 +19,10 @@
 //= require underscore/underscore-min.js
 //= require moment/moment.js
 //= require bootstrap-calendar/calendar.min.js
+//= require moment
+//= require bootstrap-datetimepicker
+//= require jquery-ui/jquery-ui.min.js
+//= require rangecalendar/jquery.rangecalendar.js
 
 /* Adds methods to a Javascript Prototype Object (pseudo-Class) */
 Function.prototype.method = function (name, func) {

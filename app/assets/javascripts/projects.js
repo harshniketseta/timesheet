@@ -34,6 +34,25 @@ var Timesheet = (function(Timesheet) {
       $("#create_project").modal();
     });
 
+    $(".editProject").on("click", function(event){
+        event.preventDefault();
+
+        var jEle = $(this)
+            ,href = jEle.attr("href")
+            ,project_id = href.split("/")[2]
+            ,jModal = $("#edit_project")
+            ,modalBody = jModal.find(".modal-body")
+            ;
+
+        modalBody.load(href, function(){
+            jModal.modal();
+        });
+    });
+
+    $(".positive").on("click", function(event){
+      $('.edit_project').submit();
+    });
+
     $(".clickable").on("click", function(event){
       event.preventDefault();
 

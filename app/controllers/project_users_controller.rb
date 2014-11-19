@@ -1,8 +1,12 @@
 class ProjectUsersController < ApplicationController
 
   def create
-    ProjectUser.create(project_users_params)
-    redirect_to request.referrer, :notice => "User added to project."
+    begin
+      ProjectUser.create(project_users_params)
+      redirect_to request.referrer, :notice => "User added to project."
+    rescue StandardError => e
+      redirect_to request.referrer, :alert => [e.message]
+    end
   end
 
   private
