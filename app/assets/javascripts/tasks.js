@@ -74,9 +74,20 @@ var Timesheet = (function(Timesheet) {
    });
 
     Timesheet.Tasks.method("initRangeCalendar", function(){
-        var self = this;
-
-        self.rangeCalendar = $("#range-calendar").rangeCalendar();
+      var self = this;
+      self.rangeCalendar = $("#range-calendar").rangeCalendar({
+          theme:"default-theme",
+          startDate: moment(),
+          endDate: moment().add('months', 12),
+          weekends: false,
+          changeRangeCallback: self.initChangerangeCal});
     });
+
+    Timesheet.Tasks.method("initChangerangeCal", function(target,range){
+
+      $(target).parent().find("[name='task[estimated_time_for_completion]']").val(range.width * 8);
+
+    });
+
   return Timesheet;
 })(Timesheet);

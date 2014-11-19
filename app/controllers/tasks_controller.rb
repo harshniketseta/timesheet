@@ -10,18 +10,33 @@ class TasksController < ApplicationController
 
   def create
     begin
-      tasks_params = Task.preprocess_params(task_params, current_user)
-      @task = @project.tasks.create(tasks_params)
+      # estimated_time = Task.preprocess_params(time_params)
+      @task = @project.tasks.new(task_params)
+      @task.assignor_id = current_user.id
+      # @task.estimated_time_for_completion = estimated_time
+      @task.save!
       redirect_to request.referrer, :notice => "Task created successfully."
     rescue => e
       redirect_to request.referrer, :alert => [e.message]
     end
   end
 
+  def edit
+    @task = @project.tasks.find(params[:id])
+    render :layout => false
+  end
+
+  def update
+
+  end
+
   private
 
   def task_params
-    params[:task].present? ? params.require(:task).permit([:title, :description, :assigned_id, :priority, :from_date, :to_date]) : {}
+    params[:task].present? ? params.require(:task).permit([:title, :description, :assigned_id, :priority, :from_date, :to_date, :estimated_time_for_completion]) : {}
   end
 
+  # def time_params
+  #   params[:time].present? ? params.require(:time).permit([:to_complete_hours, :to_complete_minutes]) : {}
+  # end
 end

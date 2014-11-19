@@ -18,7 +18,9 @@
 
 <div class="tasksWrap row maximized">
   <div class="taskTile">
-
+    <% @tasks.each do |task| %>
+        <%= render :partial => "tasks/taskTitle", :locals => {:task => task} %>
+    <% end %>
   </div>
 </div>
 
