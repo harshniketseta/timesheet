@@ -1,11 +1,17 @@
 <div class="taskTile col-lg-12 col-md-6 col-sm-6 col-xs-12">
-    <div class="panel panel-primary">
-        <h3><%= task.title %></h3>
-        <div clss="panel-body">
-          <%= task.description %>
-        </div>
-      <div clss="panel-footer">
-        <%= task.description %>
-      </div>
+  <div class="min-info">
+    <div class="pull-left">
+      <%= link_to content_tag(:span, "", class: "fa fa-caret-right toggle-task"),
+                  "#openTask_#{task.id}", title: "Open Task"
+      %>
+      <%= task.title %>
     </div>
+    <div class="pull-right">
+      <%= task.priority %>
+      <%= task.assigned.present? ? task.assigned.username : "Unassigned" %>
+    </div>
+  </div>
+  <div class="more-info">
+    <%= task.description %>
+  </div>
 </div>

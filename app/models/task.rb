@@ -1,5 +1,7 @@
 class Task < ActiveRecord::Base
   belongs_to :project
+  belongs_to :assigned, class: User
+  belongs_to :assignor, class: User
 
 
   def self.preprocess_params(params)

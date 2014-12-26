@@ -17,6 +17,28 @@ var Timesheet = (function(Timesheet) {
 
   Timesheet.Tasks.method("initEventListeners", function(){
 
+    $(".toggle-task").on("click", function(event){
+      var jToggleTaskLn = $(this)
+        ,jTaskTile = jToggleTaskLn.closest(".taskTile")
+        ,jMinInfo = jTaskTile.find(".min-info")
+        ,jMoreInfo = jTaskTile.find(".more-info")
+        ;
+
+      if(jToggleTaskLn.hasClass("fa-caret-right")) {
+        jToggleTaskLn.rotate(90, 400, function () {
+          jToggleTaskLn.addClass("fa-caret-down").removeClass("fa-caret-right");
+          jToggleTaskLn.rotate(0, 0);
+        });
+        jMoreInfo.slideDown();
+      } else {
+        jToggleTaskLn.rotate(-90, 400, function(){
+          jToggleTaskLn.addClass("fa-caret-right").removeClass("fa-caret-down");
+          jToggleTaskLn.rotate(0, 0);
+        });
+        jMoreInfo.slideUp();
+      }
+    });
+
     $(".add-task").on("click", function(event){
       event.preventDefault();
       window.location = "#createTask";
@@ -79,11 +101,12 @@ var Timesheet = (function(Timesheet) {
           theme:"default-theme",
           startDate: moment(),
           endDate: moment().add('months', 12),
-          weekends: false,
-          changeRangeCallback: self.initChangerangeCal});
+          weekends: true,
+          changeRangeCallback: self.onChangeRange
+      });
     });
 
-    Timesheet.Tasks.method("initChangerangeCal", function(target,range){
+    Timesheet.Tasks.method("onChangeRange", function(target, range){
 
       $(target).parent().find("[name='task[estimated_time_for_completion]']").val(range.width * 8);
 

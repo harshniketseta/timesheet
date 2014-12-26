@@ -7,19 +7,17 @@
   <div class="title main"><%= @project.name %></div>
   <div class="title summary">Tasks</div>
 
-  <div class="actionsWrap">
+  <div class="actionsWrap" style="margin-top: 272px;">
     <core-tooltip label="Add Task" class="fancy pull-right add-task" role="tooltip">
       <paper-fab icon="add" role="button"></paper-fab>
     </core-tooltip>
   </div>
 </div>
 
-<div class="bannerBG maximized" style="display: none;"></div>
-
 <div class="tasksWrap row maximized">
-  <div class="taskTile">
+  <div>
     <% @tasks.each do |task| %>
-        <%= render :partial => "tasks/taskTitle", :locals => {:task => task} %>
+      <%= render :partial => "tasks/taskTile", :locals => {:task => task} %>
     <% end %>
   </div>
 </div>

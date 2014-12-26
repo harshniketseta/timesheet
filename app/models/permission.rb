@@ -1,3 +1,3 @@
 class Permission < ActiveRecord::Base
-  cal
+  has_many :role_permissions
 end

@@ -10,6 +10,7 @@ class User < ActiveRecord::Base
   def self.find_for_google_oauth2(access_token, signed_in_resource=nil)
 
     hosting_domain = access_token.extra.raw_info.hd rescue ""
+    username = access_token.info.email.split("@").first
     unless hosting_domain == "idyllic-software.com"
       user = User.new()
       user.errors.add(:base, "You are not part of mavericks. Try when you reach that level.")
@@ -29,7 +30,7 @@ class User < ActiveRecord::Base
                            email: data["email"],
                            uid: access_token.uid ,
                            password: Devise.friendly_token[0,20],
-                           username: access_token.info.name,
+                           username: username,
                            avatar: access_token.info.image
         )
       end

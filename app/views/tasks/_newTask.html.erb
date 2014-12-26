@@ -6,7 +6,7 @@
         <h4 class="modal-title">Create Task</h4>
       </div>
       <div class="modal-body">
-        <%= form_for @project.tasks.new, url: {controller: "tasks", action: "create"} do |f| %>
+        <%= form_for @project.tasks.new, url: {controller: "tasks", action: "create"}, :novalidate => 'novalidate' do |f| %>
           <div class="table-responsive">
             <div class="row margin0 hide">
               <span class="col-lg-12 col-md-12 col-xs-12 marginTB10">
@@ -39,7 +39,6 @@
               <span class="col-lg-12 col-md-12 col-xs-12 marginTB10">
                 <%= f.text_field :assigned_id,
                                  :class => 'form-control memberSelect2Input',
-                                 :required => "true",
                                  :placeholder => "Assign to",
                                  "data-url" => "/lists/members"
                 %>

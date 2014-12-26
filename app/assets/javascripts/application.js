@@ -30,6 +30,33 @@ Function.prototype.method = function (name, func) {
   return this;
 };
 
+jQuery.fn.rotate = function(degrees, duration, cb) {
+  var degrees = degrees || 0
+    ,duration = (duration == undefined ? 400 : duration)
+    ,cb = cb || function(){};
+
+//  $(this).css({'-webkit-transform' : 'rotate('+ degrees +'deg)',
+//    '-moz-transform' : 'rotate('+ degrees +'deg)',
+//    '-ms-transform' : 'rotate('+ degrees +'deg)',
+//    'transform' : 'rotate('+ degrees +'deg)'});
+//  $(this).animate({'-webkit-transform' : 'rotate('+ degrees +'deg)',
+//    '-moz-transform' : 'rotate('+ degrees +'deg)',
+//    '-ms-transform' : 'rotate('+ degrees +'deg)',
+//    'transform' : 'rotate('+ degrees +'deg)'}, duration, cb);
+
+  $(this).animate({  borderSpacing: degrees }, {
+    step: function(now,fx) {
+      $(this).css('-webkit-transform','rotate('+now+'deg)');
+      $(this).css('-moz-transform','rotate('+now+'deg)');
+      $(this).css('transform','rotate('+now+'deg)');
+    },
+    duration: duration,
+    complete: cb
+  },'linear');
+
+  return $(this);
+};
+
 var Timesheet = (function () {
   /*
    Base App Class. Lazy Loads child classes aka subApps.
@@ -89,6 +116,7 @@ var Timesheet = (function () {
   App.method("init", function () {
     var self = this;
 
+    self.helper().initBanner();
     self.helper().initAlerts();
     self.helper().initAllSelect2();
     self.helper().initNumberOnlyField();
@@ -136,6 +164,42 @@ var Timesheet = (function (Timesheet) {
  Review:
  */
 var _Helper = {
+  initBanner: function(){
+    $("#main_container").on("scroll", function (event) {
+      var jMainContainer = $(this)
+        , scrollTop = jMainContainer.scrollTop()
+        ;
+
+      if (scrollTop > 100 && jMainContainer.find(".banner.maximized").length > 0) {
+        var bannerDiv = jMainContainer.find(".banner")
+
+        bannerDiv.find(".actionsWrap").animate({"margin-top": "44px"}, 400);
+
+        jMainContainer.find(".banner").removeClass("maximized");
+        jMainContainer.find(".projectWrap").removeClass("maximized");
+
+        bannerDiv.animate({height: "72px"}, 400, function(){
+          jMainContainer.find(".banner").addClass("minimized");
+          jMainContainer.find(".projectWrap").addClass("minimized");
+        });
+
+      }
+      if (scrollTop < 100 && jMainContainer.find(".banner.minimized").length > 0) {
+        var bannerDiv = jMainContainer.find(".banner")
+
+        bannerDiv.find(".actionsWrap").animate({"margin-top": "272px"}, 400);
+
+        jMainContainer.find(".banner").removeClass("minimized");
+        jMainContainer.find(".projectWrap").removeClass("minimized");
+
+        jMainContainer.find(".banner").animate({height: "300px"}, 400, function(){
+          jMainContainer.find(".banner").addClass("maximized");
+          jMainContainer.find(".projectWrap").addClass("maximized");
+        });
+
+      }
+    });
+  },
   /*
    Init All date picker components.
    Author: Harshniket

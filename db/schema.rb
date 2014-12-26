@@ -14,7 +14,7 @@
 ActiveRecord::Schema.define(version: 20141117122606) do
 
   create_table "permissions", force: true do |t|
-    t.string   "permission", limit: 100
+    t.string   "name",       limit: 100
     t.datetime "created_at"
     t.datetime "updated_at"
   end
