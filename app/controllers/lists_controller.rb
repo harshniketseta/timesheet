@@ -8,8 +8,7 @@ class ListsController < ApplicationController
             collect { |user| {:id => user.id, :text => user.username}}
       when "members"
         project = Project.find(params[:project_id])
-        members = project.members.map(&:user).collect { |user| {:id => user.id, :text => user.username}}
-        data = members
+        data = project.members.map(&:user).collect { |user| user.nil? ? nil : {:id => user.id, :text => user.username}}.compact
       when "roles"
         data = Role.where(["name LIKE ?", "#{params[:q]}%"]).limit(params[:page_limit]).
             collect { |role| {:id => role.id, :text => role.name} }

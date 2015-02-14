@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141117122606) do
+ActiveRecord::Schema.define(version: 20141226165401) do
 
   create_table "permissions", force: true do |t|
     t.string   "name",       limit: 100
@@ -65,6 +65,8 @@ ActiveRecord::Schema.define(version: 20141117122606) do
     t.datetime "updated_at"
     t.datetime "from_date"
     t.datetime "to_date"
+    t.date     "scheduled_start"
+    t.date     "scheduled_end"
   end
 
   create_table "users", force: true do |t|

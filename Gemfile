@@ -57,3 +57,16 @@ gem 'bootstrap3-datetimepicker-rails', '~> 3.1.3'
 # gem 'debugger', group: [:development, :test]
 
 
+group :development do
+  # gem 'ruby-debug'
+  gem 'better_errors'
+  gem "binding_of_caller"
+
+  gem 'annotate', '~> 2.6.5'
+end
+
+group :test do
+  gem 'rspec-rails', '~> 3.0.2'
+  gem 'database_cleaner', '~> 1.3.0'
+  gem 'factory_girl_rails', "~> 4.2.1"
+end
